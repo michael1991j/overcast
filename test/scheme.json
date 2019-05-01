@@ -1,0 +1,130 @@
+{
+    "version": "4.0",
+    "dataServices": {
+        "schema": [
+            {
+                "namespace": "inipop",
+                "entityType": [
+                    {
+                        "name": "SensorBox",
+                        "key": [
+                            {
+                                "propertyRef": [
+                                    {
+                                        "name": "SerialNum"
+                                    }
+                                ]
+                            }
+                        ],
+                        "property": [
+                            {
+                                "name": "SerialNum",
+                                "type": "Edm.Guid",
+                                "nullable": "false"
+                            },
+                            {
+                                "name": "long",
+                                "type": "Edm.Decimal",
+                                "nullable": "true"
+                            },
+                            {
+                                "name": "lat",
+                                "type": "Edm.Decimal",
+                                "nullable": "true"
+                            },
+                            {
+                                "name": "location",
+                                "type": "Edm.String",
+                                "nullable": "true"
+                            }
+                        ],
+                        "navigationProperty": [
+                            {
+                                "name": "sensors",
+                                "type": "Collection(inipop.Sensor)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sensor",
+                        "key": [
+                            {
+                                "propertyRef": [
+                                    {
+                                        "name": "SensorUID"
+                                    }
+                                ]
+                            }
+                        ],
+                        "property": [
+                            {
+                                "name": "SensorUID",
+                                "type": "Edm.Guid",
+                                "nullable": "false"
+                            },
+                            {
+                                "name": "SensorGroupUID",
+                                "type": "Edm.Guid",
+                                "nullable": "true"
+                            },
+                            {
+                                "name": "SerialNum",
+                                "type": "Edm.Guid",
+                                "nullable": "false"
+                            },
+                            {
+                                "name": "SensorName",
+                                "type": "Edm.String",
+                                "nullable": "true"
+                            }
+                        ],
+                        "navigationProperty": [
+                            {
+                                "name": "Measurements",
+                                "type": "Collection(inipop.Measurement)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Measurement",
+                        "key": [
+                            {
+                                "propertyRef": [
+                                    {
+                                        "name": "Id"
+                                    }
+                                ]
+                            }
+                        ],
+                        "property": [
+                            {
+                                "name": "Id",
+                                "type": "Edm.Int64",
+                                "nullable": "true"
+                            },
+                            {
+                                "name": "SensorUID",
+                                "type": "Edm.Guid",
+                                "nullable": "false"
+                            },
+                            {
+                                "name": "EntryDate",
+                                "type": "Edm.DateTimeOffset",
+                                "nullable": "true"
+                            },
+                            {
+                                "name": "EntryValue",
+                                "type": "Edm.Double",
+                                "nullable": "true"
+                            }
+                        ],
+                        "navigationProperty": []
+                    }
+                ],
+                "complexType": [],
+                "enumType": [],
+                "annotations": []
+            }
+        ]
+    }
+}

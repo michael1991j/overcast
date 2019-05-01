@@ -1,0 +1,12 @@
+{
+    "scheme": "scheme.json",
+    "db": {
+        "server": "sensorbox.database.windows.net",
+        "database": "sensorboxexample",
+        "user": "michael",
+        "password": "R0bot123",
+        "options": {
+            "encrypt": true
+        }
+    }
+}
